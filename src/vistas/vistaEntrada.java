@@ -12,17 +12,22 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.JSeparator;
+import javax.swing.JButton;
 
-public class InterfazTienda extends JFrame {
+public class vistaEntrada extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField txtIDEntrada;
-	private JTextField txtIdDelProducto;
-	private JTextField txtCantidad;
-	private JTextField txtFactura;
-	private JTextField txtFecha;
-	private JTextField txtValorDeLaCompra;
-
+	public JPanel contentPane;
+	public JTextField txtEntradaID;
+	public JTextField txtIdDelProducto;
+	public JTextField txtCantidad;
+	public JTextField txtFactura;
+	public JTextField txtFecha;
+	public JTextField txtValorDeLaCompra;
+	public JButton btnActualizar;
+	public JButton btnBuscar;
+	public JButton btnBorrar;
+	public JButton btnIngresar;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -30,7 +35,7 @@ public class InterfazTienda extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InterfazTienda frame = new InterfazTienda();
+					vistaEntrada frame = new vistaEntrada();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +47,7 @@ public class InterfazTienda extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public InterfazTienda() {
+	public vistaEntrada() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
@@ -52,7 +57,7 @@ public class InterfazTienda extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblPanel = new JLabel("");
-		lblPanel.setIcon(new ImageIcon(InterfazTienda.class.getResource("/icons/panel 2.jpg")));
+		lblPanel.setIcon(new ImageIcon(vistaEntrada.class.getResource("/icons/panel 2.jpg")));
 		lblPanel.setBounds(0, 0, 220, 461);
 		contentPane.add(lblPanel);
 		
@@ -91,14 +96,14 @@ public class InterfazTienda extends JFrame {
 		lblValorDeCompra.setBounds(247, 364, 111, 25);
 		contentPane.add(lblValorDeCompra);
 		
-		txtIDEntrada = new JTextField();
-		txtIDEntrada.setBorder(null);
-		txtIDEntrada.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
-		txtIDEntrada.setText("Id de la entrada");
-		txtIDEntrada.setForeground(Color.LIGHT_GRAY);
-		txtIDEntrada.setBounds(368, 85, 122, 20);
-		contentPane.add(txtIDEntrada);
-		txtIDEntrada.setColumns(10);
+		txtEntradaID = new JTextField();
+		txtEntradaID.setBorder(null);
+		txtEntradaID.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
+		txtEntradaID.setText("Id de la entrada");
+		txtEntradaID.setForeground(Color.LIGHT_GRAY);
+		txtEntradaID.setBounds(368, 85, 122, 20);
+		contentPane.add(txtEntradaID);
+		txtEntradaID.setColumns(10);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.BLACK);
@@ -176,41 +181,29 @@ public class InterfazTienda extends JFrame {
 		contentPane.add(separator_1_1_1_1_1);
 		
 		JLabel lblBarra = new JLabel("");
-		lblBarra.setIcon(new ImageIcon(InterfazTienda.class.getResource("/icons/fondo3.jpg")));
+		lblBarra.setIcon(new ImageIcon(vistaEntrada.class.getResource("/icons/fondo3.jpg")));
 		lblBarra.setBackground(new Color(240, 255, 240));
 		lblBarra.setBounds(219, 0, 565, 49);
 		contentPane.add(lblBarra);
 		
-		JPanel btnIngresar = new JPanel();
-		btnIngresar.setBounds(247, 410, 80, 25);
+		JButton btnIngresar = new JButton("Ingresar");
+		btnIngresar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
+		btnIngresar.setBounds(247, 412, 89, 23);
 		contentPane.add(btnIngresar);
 		
-		JLabel lblIngresar = new JLabel("Ingresar");
-		lblIngresar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
-		btnIngresar.add(lblIngresar);
-		
-		JPanel btnBorrar = new JPanel();
-		btnBorrar.setBounds(368, 410, 80, 25);
+		JButton btnBorrar = new JButton("Borrar");
+		btnBorrar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
+		btnBorrar.setBounds(368, 412, 89, 23);
 		contentPane.add(btnBorrar);
 		
-		JLabel lblBorrar = new JLabel("Borrar");
-		lblBorrar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
-		btnBorrar.add(lblBorrar);
-		
-		JPanel btnBuscar = new JPanel();
-		btnBuscar.setBounds(498, 410, 80, 25);
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
+		btnBuscar.setBounds(486, 412, 89, 23);
 		contentPane.add(btnBuscar);
 		
-		JLabel lblBuscar = new JLabel("Buscar");
-		lblBuscar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
-		btnBuscar.add(lblBuscar);
-		
-		JPanel btnActualizar = new JPanel();
-		btnActualizar.setBounds(607, 410, 80, 25);
+		JButton btnActualizar = new JButton("Actualizar");
+		btnActualizar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
+		btnActualizar.setBounds(615, 412, 97, 23);
 		contentPane.add(btnActualizar);
-		
-		JLabel lblActualizar = new JLabel("Actualizar");
-		lblActualizar.setFont(new Font("Modern No. 20", Font.PLAIN, 15));
-		btnActualizar.add(lblActualizar);
 	}
 }
